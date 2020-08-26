@@ -1,6 +1,6 @@
 {
     "name": "syntro/silverstripe-elemental-bootstrap-staffsection",
-    "description": "A bootsttrap based gallery section",
+    "description": "A bootsttrap based staff section",
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
