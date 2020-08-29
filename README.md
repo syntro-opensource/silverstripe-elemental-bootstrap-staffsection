@@ -10,7 +10,9 @@ This module is part of a larger collection. See
 [`syntro/silverstripe-elemental-bootstrap-collection`](https://github.com/syntro-opensource/silverstripe-elemental-bootstrap-collection)
 for details.
 
-Provides a simple section displaying sections.
+Provides a simple section displaying staff members.
+
+> It is planned to include a link to the blog profile, if the blog module is installed.
 
 ## Requirements
 
@@ -30,27 +32,8 @@ See [License](license.md)
 
 ## Documentation
 
-This Section only provides a base skeleton and without customization only renders
-thumbnail images. If you want to have a masonry layout or a lightbox, you will
-have to implement these in your theme
+All configuration options follow [the base items config](https://github.com/syntro-opensource/silverstripe-elemental-bootstrap-baseitems#documentation).
 
- * [Customize](docs/en/customizing.md)
-
-<!-- ## Example configuration (optional)
-If your module makes use of the config API in SilverStripe it's a good idea to provide an example config
- here that will get the module working out of the box and expose the user to the possible configuration options.
-
-Provide a yaml code example where possible.
-
-```yaml
-
-Page:
-  config_option: true
-  another_config:
-    - item1
-    - item2
-
-``` -->
 
 ## Maintainers
  * Matthias Leutenegger <hello@syntro.ch>

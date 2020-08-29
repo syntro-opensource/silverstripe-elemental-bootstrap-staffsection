@@ -1,3 +1,13 @@
 de:
   Syntro\SilverStripeElementalBootstrapStaffSection\Elements\StaffSection:
     BlockType: Personal Abschnitt
+    CONTENT: Inhalt
+    STAFFMEMBERS: Mitarbeiter
+    SUMMARY:
+      one: 'Ein Mitarbeiter'
+      other: '{count} Mitarbeiter'
+  Syntro\SilverStripeElementalBootstrapStaffSection\Model\StaffMember:
+    IMAGE: Portrait
+    TITLE: Name
+    POSITION: Position
+    DESCRIPTION: Beschreibung

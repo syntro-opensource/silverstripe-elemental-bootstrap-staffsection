@@ -51,6 +51,29 @@ class StaffMember extends BaseItem
         'ShowTitle' => true
     ];
 
+    private static $summary_fields = [
+        'Image.StripThumbnail',
+        'Title',
+        'Position'
+    ];
+
+    /**
+     * fieldLabels - apply labels
+     *
+     * @param  boolean $includerelations = true
+     * @return array
+     */
+    public function fieldLabels($includerelations = true)
+    {
+        $labels = parent::fieldLabels($includerelations);
+        $labels['Image.StripThumbnail'] = _t(__CLASS__ . '.IMAGE', 'Image');
+        $labels['Image'] = _t(__CLASS__ . '.IMAGE', 'Image');
+        $labels['Title'] = _t(__CLASS__ . '.TITLE', 'Title');
+        $labels['Position'] = _t(__CLASS__ . '.POSITION', 'Position');
+        $labels['Description'] = _t(__CLASS__ . '.DESCRIPTION', 'Description');
+        return $labels;
+    }
+
     /**
      * @return FieldList
      */
@@ -61,7 +84,8 @@ class StaffMember extends BaseItem
             $fields->removeByName([
                 'Sort',
                 'SectionID',
-                'Title'
+                'ShowTitle',
+                'Name'
             ]);
 
             // Add title field
@@ -69,7 +93,7 @@ class StaffMember extends BaseItem
                 'Root.Main',
                 TextField::create(
                     'Title',
-                    'Name'
+                    $this->fieldLabel('Title')
                 ),
                 'Position'
             );
@@ -79,20 +103,11 @@ class StaffMember extends BaseItem
                 'Root.Main',
                 $imageField = UploadField::create(
                     'Image',
-                    'Image'
-                )
+                    $this->fieldLabel('Image')
+                ),
+                'Position'
             );
             $imageField->setFolderName('Uploads/StaffMembers');
-
-            // Add content field
-            // $fields->addFieldToTab(
-            //     'Root.Main',
-            //     TextareaField::create(
-            //         'Content',
-            //         'Content'
-            //     ),
-            //     'CTALink'
-            // );
         });
 
         return parent::getCMSFields();

@@ -101,12 +101,31 @@ class StaffSection extends BootstrapSectionBaseElement
         'StaffMembers'
     ];
 
+
+    /**
+     * fieldLabels - apply labels
+     *
+     * @param  boolean $includerelations = true
+     * @return array
+     */
+    public function fieldLabels($includerelations = true)
+    {
+        $labels = parent::fieldLabels($includerelations);
+        $labels['StaffMembers'] = _t(__CLASS__ . '.STAFFMEMBERS', 'Staff members');
+        $labels['Content'] = _t(__CLASS__ . '.CONTENT', 'Content');
+        return $labels;
+    }
+
+
     /**
      * @return FieldList
      */
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function ($fields) {
+
+            $fields->dataFieldByName('Content')->setTitle($this->fieldLabel('Content'));
+
 
             if ($this->ID) {
                 /** @var GridField $people */
@@ -133,7 +152,15 @@ class StaffSection extends BootstrapSectionBaseElement
      */
     public function getSummary()
     {
-        return DBField::create_field('HTMLText', $this->Content)->Summary(20);
+        return sprintf(
+            '%s: %s',
+            _t(
+                __CLASS__ . '.SUMMARY',
+                'one staff member|{count} staff members',
+                ['count' => $this->StaffMembers()->count()]
+            ),
+            implode(', ', $this->StaffMembers()->map('Title')->keys())
+        );
     }
 
     /**

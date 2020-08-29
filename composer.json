@@ -30,7 +30,7 @@
     },
     "extra": {
         "expose": [
-            "client"
+            "client/img"
         ]
     },
     "autoload": {
