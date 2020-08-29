@@ -47,43 +47,6 @@ class StaffSection extends BootstrapSectionBaseElement
      */
     private static $table_name = 'ElementStaffSection';
 
-    /**
-     * set to false if image option should not show up
-     *
-     * @config
-     * @var bool
-     */
-    private static $allow_image_background = true;
-
-    /**
-     * Available background colors for this Element
-     *
-     * @config
-     * @var array
-     */
-    private static $background_colors = [
-        'default' => 'Default',
-        'light' => 'Lightgrey',
-        'dark' => 'Dark',
-    ];
-
-    private static $text_colors = [
-        'default' => 'Default',
-        'white' => 'White'
-    ];
-
-    /**
-     * Color mapping from background color. This is mainly intended
-     * to set a default color on the section-level, ensuring text is readable.
-     * Colors of subelementscan be added via templates
-     *
-     * @config
-     * @var array
-     */
-    private static $text_colors_by_background = [
-        'light' => 'default',
-        'dark' => 'light',
-    ];
 
     private static $db = [
         'Content' => 'Text',
