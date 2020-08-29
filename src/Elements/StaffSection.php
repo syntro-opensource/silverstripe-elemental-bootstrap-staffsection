@@ -13,7 +13,6 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use Syntro\SilverStripeElementalBaseitems\Elements\BootstrapSectionBaseElement;
 use Syntro\SilverStripeElementalBootstrapStaffSection\Model\StaffMember;
 
-
 /**
  *  Bootstrap based Staff section
  *
@@ -141,7 +140,6 @@ class StaffSection extends BootstrapSectionBaseElement
 
                 $fields->addFieldToTab('Root.Main', $people);
             }
-
         });
 
         return parent::getCMSFields();
@@ -173,6 +171,11 @@ class StaffSection extends BootstrapSectionBaseElement
         return $blockSchema;
     }
 
+    /**
+     * getType
+     *
+     * @return string
+     */
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Staff Section');

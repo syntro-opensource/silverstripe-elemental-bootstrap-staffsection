@@ -1,9 +1,11 @@
 <?php
+
 namespace Syntro\SilverStripeElementalBootstrapStaffSection\Model;
 
 use SilverStripe\Forms\TextField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use Syntro\SilverStripeElementalBaseitems\Model\BaseItem;
 use Syntro\SilverStripeElementalBootstrapStaffSection\Elements\StaffSection;
