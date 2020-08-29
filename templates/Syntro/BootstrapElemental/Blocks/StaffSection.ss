@@ -15,7 +15,7 @@
                 </div>
                 <h3 class="mt-4">$Title</h3>
                 <% if Position %>
-                <lead class="text-uppercase"><small>$Position</small></lead>
+                <small class="text-uppercase"><strong>$Position</strong></small>
                 <% end_if %>
             <p class="mt-3 px-3">$Description</p>
             </div>
