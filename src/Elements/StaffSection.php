@@ -56,12 +56,6 @@ class StaffSection extends BaseElement
         'StaffMembers' => StaffMember::class
     ];
 
-    /**
-     * @var array
-     */
-    private static $owns = [
-        'StaffMembers'
-    ];
 
 
     /**
