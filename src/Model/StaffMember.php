@@ -70,7 +70,7 @@ class StaffMember extends BaseItem
         $labels = parent::fieldLabels($includerelations);
         $labels['Image.StripThumbnail'] = _t(__CLASS__ . '.IMAGE', 'Image');
         $labels['Image'] = _t(__CLASS__ . '.IMAGE', 'Image');
-        $labels['Title'] = _t(__CLASS__ . '.TITLE', 'Title');
+        $labels['Title'] = _t(__CLASS__ . '.TITLE', 'Name');
         $labels['Position'] = _t(__CLASS__ . '.POSITION', 'Position');
         $labels['Description'] = _t(__CLASS__ . '.DESCRIPTION', 'Description');
         return $labels;
@@ -86,6 +86,7 @@ class StaffMember extends BaseItem
             $fields->removeByName([
                 'Sort',
                 'SectionID',
+                'Title',
                 'ShowTitle',
                 'Name'
             ]);
